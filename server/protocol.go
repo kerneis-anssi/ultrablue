@@ -9,6 +9,7 @@ import (
 	"errors"
 	"os"
 	"reflect"
+	"time"
 
 	"github.com/fxamacker/cbor/v2"
 	"github.com/google/go-attestation/attest"
@@ -297,5 +298,6 @@ func ultrablueProtocol(ch chan []byte) {
 		logrus.Error(err)
 		os.Exit(1)
 	}
+	time.Sleep(time.Second)
 	os.Exit(0)
 }
